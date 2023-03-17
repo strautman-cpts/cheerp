@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cheerp test</title>
+    <script defer src="dom3_wasm.js"></script>
+  </head>
+  <body>
+	<h1 id="pagetitle">Boring static text</h1>
+	<button id="mybutton">Run myIntFunc</button>
+    <button id="test">NULL</button>
+	<script>document.getElementById("mybutton").addEventListener("click", () => {
+		console.log("click event");
+		var result = MyIntFuncJS();
+		document.getElementById("test").textContent = "res = " + result.toString();
+	});
+	</script>
+	<br/>
+	<button id="getline">Run GetLineJS 0</button>
+    <button id="getlineRes">NULL</button>
+	<script>document.getElementById("getline").addEventListener("click", () => {
+		console.log("getline click event");
+		var result = GetLineJS(0);
+		document.getElementById("getlineRes").textContent = "res = " + result;
+	});
+	</script>
+	<br/>
+	<button id="getline1">Run GetLineJS 1</button>
+    <button id="getlineRes1">NULL</button>
+	<script>document.getElementById("getline1").addEventListener("click", () => {
+		console.log("getline1 click event");
+		var result = GetLineJS(1);
+		document.getElementById("getlineRes1").textContent = "res = " + result;
+	});
+	</script>
+	<br/>
+	<button id="exchangStr">Run ExchangeStrJS</button>
+    <button id="exchangeStrRes">NULL</button>
+	<script>document.getElementById("exchangStr").addEventListener("click", () => {
+		console.log("exchangStr click event");
+		var result = ExchangeStrJS("Are you going with me?");
+		document.getElementById("exchangeStrRes").textContent = "res = " + result;
+	});
+	</script>
+  </body>
+</html>
