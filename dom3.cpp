@@ -101,10 +101,10 @@ String* ExchangeStrJS(String* s)
 	console.log(s);
 	std::string ss = (std::string)*s;
 	console.log("ExchangeStrJS string cast.\n");
-	//std::string* sstr = exchangeStrWASM(ss);
+	std::string* sstr = exchangeStrWASM(ss);
 	console.log("ExchangeStrJS back from calling exchangeStrWASM.\n");
-	//String* ret = new String(sstr->c_str());
-	//console.log("ExchangeStrJS new String*.\n");
+	String* ret = new String(sstr->c_str());
+	console.log("ExchangeStrJS new String*.\n");
 	
 	return new String("response");
 }
